@@ -1,8 +1,26 @@
-# ChatGPT plugins quickstart
+# Forex-GPT.ai plugin quickstart
 
-Get a todo list ChatGPT plugin up and running in under 5 minutes using Python. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
+This is a quickstart guide for setting up and running the Forex-GPT OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
 
-## Setup
+## Setup for Mac users
+
+You will need the following API keys which can be obtained from their respective providers:
+
+1) Open AI API key for developers:
+2) OANDA API for for fxTrade demo account: 
+
+Each API key should be set as a local variable using the command: 
+
+```bash
+export OPENAI_API_KEY="your_api_key_here"
+```
+
+```bash
+export OANDA_API_KEY="your_api_key_here"
+```
+
+Stored API key values can be modified using `nano ~/.zshrc`
+
 
 To install the required packages for this plugin, run the following command:
 
@@ -15,6 +33,13 @@ To run the plugin, enter the following command:
 ```bash
 python main.py
 ```
+
+This should run the local server from within the terminal window that the above main.py comannd was run. Depending on your Python configuration version you may need to run:
+
+```bash
+python3 main.py
+```
+
 
 Once the local server is running:
 

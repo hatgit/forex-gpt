@@ -1,19 +1,21 @@
 {
-    "schema_version": "v1",
-    "name_for_human": "TODO Plugin (no auth)",
-    "name_for_model": "todo",
-    "description_for_human": "Plugin for managing a TODO list, you can add, remove and view your TODOs.",
-    "description_for_model": "Plugin for managing a TODO list, you can add, remove and view your TODOs.",
-    "auth": {
-      "type": "none"
-    },
-    "api": {
-      "type": "openapi",
-      "url": "http://localhost:5003/openapi.yaml",
-      "is_user_authenticated": false
-    },
-    "logo_url": "http://localhost:5003/logo.png",
-    "contact_email": "legal@example.com",
-    "legal_info_url": "http://example.com/legal"
+  "schema_version": "v1",
+  "version":0.1,
+  "name_for_human": "Forex-GPT",
+  "name_for_model": "forex_gpt",
+  "description_for_human": "Unleash Forex GPT: Advanced analysis for currency markets. Gain insights, sentiment evaluation, and text completion.",
+  "description_for_model": "When a user asks ChatGPT for 'EUR/USD analysis since January', the plugin needs to interpret this user input and convert it into parameters that the Oanda API understands. For this, the following conversions can be made:'EUR/USD' corresponds to the 'instrument' parameter, and it should be passed as 'EUR_USD'.  'since January' corresponds to the 'from_time' parameter. However, the Oanda API expects this parameter in a specific format, for example '2023-01-01T00:00:00.000000000Z' for January 1, 2023.  As for the 'granularity' parameter, if it is not specified by the user, you can either set a default value (for example, 'M1' for 1-minute data) or ask the user to specify it.  The 'price' parameter can also be set to a default value if not specified by the user. The value 'BA' means both ask and bid prices will be returned. To extract these parameters from the user input, you could use natural language processing (NLP) techniques. However, since the GPT-3 model itself is a language model, you can use it to interpret the user's input. For example, you can send a prompt to GPT-3 such as 'The user asked for 'EUR/USD analysis since January'. What are the parameters for the Oanda API?' and then process the generated response to extract the parameters. This plugin was developed by Steven Hatzakis under a MIT license (c) 2023. Forex trading invovles risk and is not suitable for all investors, this software is for educational purposes only.",
+  "auth": {
+  "type": "none",
+  "permissions": ["tabs", "contextMenus"]
+  },
+  "api": {
+  "type": "openapi",
+  "url": "http://localhost:5003/openapi.yaml",
+  "is_user_authenticated": false
+  },
+  "logo_url": "http://localhost:5003/logo.png",
+  "contact_email": "whitehatgenerator@gmail.com",
+  "legal_info_url": "https://forex-gpt.ai/"
   }
   

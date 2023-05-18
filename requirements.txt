@@ -1,2 +1,5 @@
-quart
-quart-cors
+oandapyV20
+openai
+flask
+flask-cors
+numpy

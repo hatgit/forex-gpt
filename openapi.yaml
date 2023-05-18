@@ -1,93 +1,275 @@
 openapi: 3.0.1
 info:
-  title: TODO Plugin
-  description: A plugin that allows the user to create and manage a TODO list using ChatGPT. If you do not know the user's username, ask them first before making queries to the plugin. Otherwise, use the username "global".
+  title: Forex GPT OpenAI Plugin
+  description: Unleash Forex GPT; Advanced analysis for currency markets. Gain insights, sentiment evaluation, and text completion.
   version: 'v1'
 servers:
   - url: http://localhost:5003
+oanda:
+  hostname: api-fxpractice.oanda.com
+  streaming_hostname: stream-fxpractice.oanda.com
+  port: 443
+  ssl: true
+  token: # OANDA DEMO API KEY
+  username:  
+  accounts:
+    -  #should be in format "000-000-00000-000"
+    - # should be in format "000-000-00000-000"
+  active_account: #should be in format "000-000-00000-000"
 paths:
-  /todos/{username}:
-    get:
-      operationId: getTodos
-      summary: Get the list of todos
-      parameters:
-      - in: path
-        name: username
-        schema:
-            type: string
+  /analyze:
+    post:
+      operationId: analyze
+      summary: Analyze text
+      requestBody:
         required: true
-        description: The name of the user.
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/analyzeRequest'
       responses:
         "200":
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/getTodosResponse'
+                $ref: '#/components/schemas/analyzeResponse'
+  /generate:
     post:
-      operationId: addTodo
-      summary: Add a todo to the list
-      parameters:
-      - in: path
-        name: username
-        schema:
-            type: string
-        required: true
-        description: The name of the user.
+      operationId: generate
+      summary: Generate text
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/addTodoRequest'
+              $ref: '#/components/schemas/generateRequest'
       responses:
         "200":
           description: OK
-    delete:
-      operationId: deleteTodo
-      summary: Delete a todo from the list
-      parameters:
-      - in: path
-        name: username
-        schema:
-            type: string
-        required: true
-        description: The name of the user.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/generateResponse'
+  /complete:
+    post:
+      operationId: complete
+      summary: Complete text
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/deleteTodoRequest'
+              $ref: '#/components/schemas/completeRequest'
       responses:
         "200":
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/completeResponse'
+  /search:
+    post:
+      operationId: search
+      summary: Search for text
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/searchRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/searchResponse'
+  /playground:
+    post:
+      operationId: playground
+      summary: Use the OpenAI playground
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/playgroundRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/playgroundResponse'
+  /prices:
+    post:
+      operationId: prices
+      summary: Get historical prices from the OANDA API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/pricesRequest'
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/pricesResponse'
 
 components:
   schemas:
-    getTodosResponse:
+    analyzeRequest:
       type: object
       properties:
-        todos:
+        text:
+          type: string
+          description: The text to analyze.
+          required: true
+        entities:
           type: array
           items:
-            type: string
-          description: The list of todos.
-    addTodoRequest:
+            type: object
+            properties:
+              type:
+                type: string
+                description: The type of entity.
+              start:
+                type: integer
+                description: The start index of the entity.
+              end:
+                type: integer
+                description: The end index of the entity.
+              text:
+                type: string
+                description: The text of the entity.
+    generateRequest:
       type: object
-      required:
-      - todo
       properties:
-        todo:
+        prompt:
           type: string
-          description: The todo to add to the list.
+          description: The prompt for the generator.
           required: true
-    deleteTodoRequest:
+        temperature:
+          type: float
+          description: The temperature of the generator.
+          default: 0.5
+    generateResponse:
       type: object
-      required:
-      - todo_idx
       properties:
-        todo_idx:
-          type: integer
-          description: The index of the todo to delete.
+        generated_text:
+          type: string
+          description: The generated text.
+    completeRequest:
+      type: object
+      properties:
+        text:
+          type: string
+          description: The text to complete.
           required: true
+    completeResponse:
+      type: object
+      properties:
+        completed_text:
+          type: string
+          description: The completed text.
+    searchRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The search query.
+          required: true
+    searchResponse:
+      type: object
+      properties:
+        results:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+                description: The title of the search result.
+              url:
+                type: string
+                description: The URL of the search result.
+    playgroundRequest:
+      type: object
+      properties:
+        code:
+          type: string
+          description: The code to execute in the OpenAI playground.
+          required: true
+    playgroundResponse:
+      type: object
+      properties:
+        output:
+          type: string
+          description: The output of the code execution in the OpenAI playground.
+    pricesRequest:
+      type: object
+      properties:
+        instrument:
+          type: string
+          description: The instrument to get historical prices for.
+          required: true
+        from_time:
+          type: string
+          description: The start time for retrieving historical prices.
+          required: true
+        granularity:
+          type: string
+          description: The granularity of the historical prices.
+          required: true
+        price:
+          type: string
+          description: The price type to retrieve (e.g., BA, BC, BO).
+          required: true
+    pricesResponse:
+      type: object
+      properties:
+        prices:
+          type: array
+          items:
+            type: object
+            properties:
+              timestamp:
+                type: string
+                description: The timestamp of the price.
+              bid:
+                type: object
+                properties:
+                  o:
+                    type: string
+                    description: The open bid price.
+                  h:
+                    type: string
+                    description: The high bid price.
+                  l:
+                    type: string
+                    description: The low bid price.
+                  c:
+                    type: string
+                    description: The close bid price.
+              ask:
+                type: object
+                properties:
+                  o:
+                    type: string
+                    description: The open ask price.
+                  h:
+                    type: string
+                    description: The high ask price.
+                  l:
+                    type: string
+                    description: The low ask price.
+                  c:
+                    type: string
+                    description: The close ask price.
+
+                   
+
