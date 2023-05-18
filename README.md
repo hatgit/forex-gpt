@@ -53,7 +53,16 @@ Once the local server is running:
 4. Select "Develop your own plugin"
 5. Enter in `localhost:5003` since this is the URL the server is running on locally, then select "Find manifest file".
 
-The plugin should now be installed and enabled! You can start with a question like "What is on my todo list" and then try adding something to it as well! 
+The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles (don't comment on each candle just overall)" or revise your prompt accordingly. Here is an example: 
+
+![image](https://github.com/hatgit/forex-gpt/assets/5213035/f907108f-dc9b-4fa5-9521-b6bb2fbfad96)
+ 
+Another example of interacting with the Chat-GPT in a way that will trigger the Forex-GPT plugin to elicit a response from the OANDA API, by asking:"what is the bid ask spread on the latest 1 minute candle from oanda" where it will default to using the eur/usd pair (alternativley you can ask for a supported currency in your prompt). 
+
+![image](https://github.com/hatgit/forex-gpt/assets/5213035/7098e22c-b26b-4a3d-8d55-8c7bd16a38d3)
+
+
+
 
 ## Forex-GPT Plugin Flowchart
 
@@ -77,6 +86,6 @@ If you run into issues or have questions building a plugin, please join our [Dev
 * https://developer.oanda.com/
 * https://developer.oanda.com/rest-live-v20/introduction/
 * https://developer.oanda.com/rest-live-v20/pricing-ep/#CurrentPrices
-*https://developer.oanda.com/rest-live-v20/account-df/
+* https://developer.oanda.com/rest-live-v20/account-df/
 
 
