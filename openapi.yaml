@@ -10,12 +10,12 @@ oanda:
   streaming_hostname: stream-fxpractice.oanda.com
   port: 443
   ssl: true
-  token: # OANDA DEMO API KEY
+  token: # OANDA DEMO API KEY (add your OANDA demo api key before this comment string)
   username:  
   accounts:
-    -  #should be in format "000-000-00000-000"
-    - # should be in format "000-000-00000-000"
-  active_account: #should be in format "000-000-00000-000"
+    -  #should be in format "000-000-00000-000" (add your OANDA v20 account number before this comment string after the dash)
+    - # should be in format "000-000-00000-000" (add your OANDA v20 account number before this comment string after the dash)
+  active_account: #should be in format "000-000-00000-000" (add your OANDA v20 account number before this comment string after the colon)
 paths:
   /analyze:
     post:
