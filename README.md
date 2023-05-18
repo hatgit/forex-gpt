@@ -69,6 +69,73 @@ Another example of interacting with the Chat-GPT in a way that will trigger the 
 
 ![Forex-GPT-plugin-flow-chart drawio](https://github.com/hatgit/forex-gpt/assets/5213035/85c42c3f-54b4-46f4-b107-c595b9d3e1fc)
 
+## Overview of how Forex-GPT works:
+
+1. Imports necessary libraries and modules.
+
+2. Configures Flask app and CORS settings.
+
+3. Defines the following routes:
+
+   - **"/generate" (POST)**
+     - Takes a 'prompt' and 'temperature' from the request's JSON.
+     - Generates text using OpenAI's Completion API with the specified 'prompt' and 'temperature'.
+     - Returns the generated text as a JSON response.
+
+   - **"/complete" (POST)**
+     - Takes 'text' from the request's JSON.
+     - Uses OpenAI's Completion API to complete the provided 'text'.
+     - Returns the completed text as a JSON response.
+
+   - **"/search" (POST)**
+     - Takes a 'query' from the request's JSON.
+     - Uses OpenAI's Completion API to generate a response to the query.
+     - Returns the generated text as a JSON response.
+
+   - **"/playground" (POST)**
+     - Takes 'code' from the request's JSON.
+     - Uses OpenAI's Completion API to generate a response to the code.
+     - Returns the generated text as a JSON response.
+
+   - **"/logo.png" (GET)**
+     - Serves a logo image from the current directory.
+
+   - **"/openapi.yaml" (GET)**
+     - Serves an OpenAPI specification file from the current directory.
+
+   - **"/.well-known/ai-plugin.json" (GET)**
+     - Serves an AI plugin manifest file from the .well-known directory.
+
+   - **"/prices" (GET/POST)**
+     - Depending on the method, takes parameters from the request's JSON or arguments.
+     - Checks if all required parameters are provided.
+     - If not, returns a prompt message as a JSON response.
+     - If yes, retrieves the price data from Oanda using the parameters.
+     - Returns the price data as a JSON response.
+
+   - **"/api/analyze" (POST)**
+     - Takes parameters from the request's JSON.
+     - If 'from_time' is not provided, calculates it as 2 days before the current time.
+     - Analyzes the market using the parameters.
+     - Returns the market sentiment as a JSON response.
+
+4. Defines the OpenAIPlugin class:
+   - Initializes the Oanda and OpenAI clients.
+   - Defines methods to analyze the market and get Oanda candles.
+
+5. Prints Oanda and OpenAI API keys.
+
+6. Lists all available OpenAI engines and prints their IDs.
+
+7. Runs the Flask app on host '0.0.0.0' and port '5003'.
+
+8. Requires the user to point the Chat-GPT developer plugin interface to the localhost URL (i.e., `http://localhost:5003`).
+
+9. The plugin is loaded into Chat-GPT and can be enabled.
+
+10. User asks Chat-GPT for analysis or sentiment on a supported currency pair (i.e., EUR/USD) for a specific duration (i.e., 1 week) and time-series (daily interval), and the plugin triggers and formats the request to the broker API to retrieve prices and perform calculations as per the Main.py.
+
+
 
 ## Getting help
 
