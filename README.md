@@ -133,8 +133,9 @@ Another example of interacting with the Chat-GPT in a way that will trigger the 
 
 9. The plugin is loaded into Chat-GPT and can be enabled.
 
-10. User asks Chat-GPT for analysis or sentiment on a supported currency pair (i.e., EUR/USD) for a specific duration (i.e., 1 week) and time-series (daily interval), and the plugin triggers and formats the request to the broker API to retrieve prices and perform calculations as per the Main.py.
+10. User asks Chat-GPT for analysis or sentiment on a supported currency pair (i.e., EUR/USD) for a specific duration (i.e., 1 week) and time-series (daily interval), and the plugin triggers and formats the request to the broker API to retrieve prices and perform calculations as per the Main.py file (see flow chart below).
 
+<img width="1587" alt="Main-dot-py-Application-flow-chart" src="https://github.com/hatgit/forex-gpt/assets/5213035/e009fe63-0e37-45e9-8e0b-b5e69d4fd574">
 
 
 ## Getting help
