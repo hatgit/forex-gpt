@@ -89,4 +89,13 @@ If you run into issues or have questions building a plugin, please join our [Dev
 * https://developer.oanda.com/rest-live-v20/pricing-ep/#CurrentPrices
 * https://developer.oanda.com/rest-live-v20/account-df/
 
+## Disclaimer
+
+**Risk Warning: Trading in currency markets involves substantial risk of loss and is not suitable for everyone.** The Forex GPT plugin provided in this repository is intended for informational purposes only and should not be considered as financial or investment advice. Before making any trading decisions, it is important to conduct thorough research, seek professional guidance, and fully understand the risks involved.
+
+**No Warranty:** The Forex GPT plugin is provided "as is" without any warranties or guarantees. The authors and contributors of this repository do not make any representations or warranties, express or implied, regarding the accuracy, reliability, or completeness of the plugin or its suitability for any particular purpose.
+
+**MIT License:** The Forex GPT plugin is released under the [MIT License](https://github.com/hatgit/forex-gpt/blob/main/LICENSE). Please refer to the [LICENSE](https://github.com/hatgit/forex-gpt/blob/main/LICENSE) file for more details.
+
+By using the Forex GPT plugin, you acknowledge and agree to the above disclaimer and understand the associated risks of currency market trading, and the limitations of large language models (LLMs) such as Chat-GPT which may produce inaccurate information about people, places, or facts. The authors and contributors of this repository shall not be held responsible for any losses or damages incurred as a result of using the plugin.
 
