@@ -1,3 +1,7 @@
+
+![logo](https://github.com/hatgit/forex-gpt/assets/5213035/c461f57b-d977-4c95-bc9f-de6abac01501)
+
+
 # Forex-GPT.ai plugin quickstart
 
 This is a quickstart guide for setting up and running the Forex-GPT OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
