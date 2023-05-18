@@ -55,23 +55,28 @@ Once the local server is running:
 
 The plugin should now be installed and enabled! You can start with a question like "What is on my todo list" and then try adding something to it as well! 
 
+## Forex-GPT Plugin Flowchart
+
+![Forex-GPT-plugin-flow-chart drawio](https://github.com/hatgit/forex-gpt/assets/5213035/85c42c3f-54b4-46f4-b107-c595b9d3e1fc)
+
+
 ## Getting help
 
 **Open AI API resources:**
 
 If you run into issues or have questions building a plugin, please join our [Developer community forum](https://community.openai.com/c/chat-plugins/20).
-https://chat.openai.com/?model=gpt-4-plugins
-https://platform.openai.com/docs/plugins/introduction
-https://chat.openai.com/
+-https://chat.openai.com/?model=gpt-4-plugins
+-https://platform.openai.com/docs/plugins/introduction
+-https://chat.openai.com/
 
 **OANDA API developer resources**: 
 
-https://github.com/hootnot/oandapyV20-examples
-https://github.com/oanda/v20-python-samples
-https://pypi.org/project/v20/
-https://developer.oanda.com/
-https://developer.oanda.com/rest-live-v20/introduction/
-https://developer.oanda.com/rest-live-v20/pricing-ep/#CurrentPrices
-https://developer.oanda.com/rest-live-v20/account-df/
+-https://github.com/hootnot/oandapyV20-examples
+-https://github.com/oanda/v20-python-samples
+-https://pypi.org/project/v20/
+-https://developer.oanda.com/
+-https://developer.oanda.com/rest-live-v20/introduction/
+-https://developer.oanda.com/rest-live-v20/pricing-ep/#CurrentPrices
+-https://developer.oanda.com/rest-live-v20/account-df/
 
 
