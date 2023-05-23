@@ -53,7 +53,24 @@ Once the local server is running:
 4. Select "Develop your own plugin"
 5. Enter in `localhost:5003` since this is the URL the server is running on locally, then select "Find manifest file".
 
-The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles (don't comment on each candle just overall)" or revise your prompt accordingly. Here is an example: 
+The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles (don't comment on each candle just overall)" or revise your prompt accordingly. 
+
+**Understanding the maximum message size and token-limit imposted by Chat GPT: **
+
+The following prompts should work, as they scratch the upper threshold of the token limit per message, which is currently 32k tokens, based on the latest engine upgrade to Forex-GPT, switching `gpt-3.5-turbo-0301` to `gpt-4-32k-0314` so that you can query larger historical time-frames. 
+
+**Sample prompts from the last hour of minute data to the last 60 months of month candle stick data:** 
+
+Try asking Forex-GPT these prompts:
+
+* "What is the overall sentiment for the EURUSD currency pair using ten-minute candles for the past ten hours, excluding volume data?"
+* "What is the overall sentiment for the GBPUSD currency pair using sixty-minute candles for the past sixty hours, excluding volume data?"
+* "What is the overall sentiment for the USDCHF currency pair using daily candles for the past sixty days, excluding volume data?"
+* "What is the overall sentiment for the USDJPY currency pair using weekly candles for the past sixty weeks, excluding volume data?"
+* "What is the overall sentiment for the USDCAD currency pair using monthly candles for the past sixty months, excluding volume data?"
+
+
+Here is some further examples: 
 
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/f907108f-dc9b-4fa5-9521-b6bb2fbfad96" width="60%" height="auto">
 
