@@ -55,11 +55,11 @@ Once the local server is running:
 
 The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles (don't comment on each candle just overall)" or revise your prompt accordingly. 
 
-**Understanding the maximum message size and token-limit imposted by Chat GPT: **
+**Understanding the maximum message size and token-limit imposted by Chat GPT:**
 
 The following prompts should work, as they scratch the upper threshold of the token limit per message, which is currently 32k tokens, based on the latest engine upgrade to Forex-GPT, switching `gpt-3.5-turbo-0301` to `gpt-4-32k-0314` so that you can query larger historical time-frames. 
 
-**Sample prompts from the last hour of minute data to the last 60 months of month candle stick data:** 
+**Sample prompts from the last hour of minute data to the last 60 months of month candle stick data:**
 
 Try asking Forex-GPT these prompts:
 
