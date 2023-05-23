@@ -66,7 +66,7 @@ def search():
     data = request.get_json()
     query = data.get('query')
     response = openai.Completion.create(
-        engine="gpt-3.5-turbo-0301",
+        engine="gpt-4-32k-0314", #default is gpt-3.5-turbo-0301 
         prompt=query,
         max_tokens=4096
     )
@@ -79,7 +79,7 @@ def playground():
     data = request.get_json()
     code = data.get('code')
     response = openai.Completion.create(
-        engine="gpt-3.5-turbo-0301",
+        engine="gpt-4-32k-0314", #default is gpt-3.5-turbo-0301 
         prompt=code,
         max_tokens=4096
     )
