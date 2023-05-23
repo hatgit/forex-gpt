@@ -174,6 +174,47 @@ If you run into issues or have questions building a plugin, please join our [Dev
 * https://developer.oanda.com/rest-live-v20/pricing-ep/#CurrentPrices
 * https://developer.oanda.com/rest-live-v20/account-df/
 
+## Major Currency Pairs
+These are the most traded currency pairs in the world, representing the world's largest economies. They include:
+
+- EUR/USD (Euro / United States Dollar)
+- USD/JPY (United States Dollar / Japanese Yen)
+- GBP/USD (British Pound Sterling / United States Dollar)
+- USD/CHF (United States Dollar / Swiss Franc)
+- AUD/USD (Australian Dollar / United States Dollar)
+- USD/CAD (United States Dollar / Canadian Dollar)
+- NZD/USD (New Zealand Dollar / United States Dollar)
+
+## Minor Currency Pairs
+These pairs do not include the US dollar but include the major currencies like the Euro, the UK Pound, and Yen. Examples include:
+
+- EUR/GBP (Euro / British Pound Sterling)
+- EUR/AUD (Euro / Australian Dollar)
+- GBP/JPY (British Pound Sterling / Japanese Yen)
+
+## Exotic Currency Pairs
+These pairs include a major currency, paired with the currency of a developing economy, such as Brazil, Mexico, or South Africa. Examples include:
+
+- USD/SGD (United States Dollar / Singapore Dollar)
+- USD/HKD (United States Dollar / Hong Kong Dollar)
+- USD/TRY (United States Dollar / Turkish Lira)
+
+## Cross Currency Pairs
+These pairs do not include the US dollar. Examples include:
+
+- EUR/CHF (Euro / Swiss Franc)
+- GBP/JPY (British Pound Sterling / Japanese Yen)
+- AUD/CAD (Australian Dollar / Canadian Dollar)
+
+## Cryptocurrency Pairs
+OANDA also supports some cryptocurrency pairs like:
+
+- BTC/USD (Bitcoin / United States Dollar)
+- ETH/USD (Ethereum / United States Dollar)
+
+Please note that the availability of currency pairs may depend on the region and the specific regulations applicable to forex trading in that region. It's always a good idea to check the OANDA API documentation or contact OANDA support for the most accurate and up-to-date information.
+
+
 ## Disclaimer
 
 **Risk Warning: Trading in currency markets involves substantial risk of loss and is not suitable for everyone.** The Forex GPT plugin provided in this repository is intended for informational purposes only and should not be considered as financial or investment advice. Before making any trading decisions, it is important to conduct thorough research, seek professional guidance, and fully understand the risks involved.
