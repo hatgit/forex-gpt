@@ -198,4 +198,7 @@ class OpenAIPlugin(object):
 
 # Start the Flask application
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5003)
+    host = os.getenv('HOST', '0.0.0.0')
+    port = int(os.getenv('PORT', 5003))
+
+    app.run(host=host, port=port)
