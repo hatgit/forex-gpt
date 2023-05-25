@@ -81,6 +81,11 @@ Another example of interacting with the Chat-GPT in a way that will trigger the 
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/7098e22c-b26b-4a3d-8d55-8c7bd16a38d3" width="60%" height="auto">
 
 
+## Here is a short video demonstrating the Forex-GPT plugin responding in real-time to a query: 
+
+https://github.com/hatgit/forex-gpt/assets/5213035/4e029080-9b86-44fc-a3a1-b347045b1844
+
+
 
 
 ## Forex-GPT Plugin Flowchart
