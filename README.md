@@ -13,17 +13,18 @@ You will need the following API keys which can be obtained from their respective
 1) Open AI API key for developers:
 2) OANDA API for for fxTrade demo account: 
 
-Each API key should be set as a local variable using the command: 
+rename the file `template.env` to `.env` and set the following variables by repalacing the #comments: 
 
-```bash
-export OPENAI_API_KEY="your_api_key_here"
+```HOST=#hosting info (i.e. 0.0.0.0)
+PORT=#port info (i.e. 5003)
+OANDA_API_KEY=#oanda api key for practice acocounts
+OPENAI_API_KEY=#openai api key
+OANDA_TOKEN= #repeat same OANDA Api key for yaml file
+YOUR_OANDA_USERNAME= #registered email 
+ACCOUNT1=#oanada demo account number 1
+ACCOUNT2=#oanada demo account number 2 (if any)
+ACTIVE_ACCOUNT= #oanada demo account v20 compatible from 1 or 2 
 ```
-
-```bash
-export OANDA_API_KEY="your_api_key_here"
-```
-
-Stored API key values can be modified using `nano ~/.zshrc`
 
 
 To install the required packages for this plugin, run the following command:
