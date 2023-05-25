@@ -200,7 +200,7 @@ class OpenAIPlugin(object):
             print(f"Unexpected error fetching candles from Oanda: {e}")
             return None
         
-     def analyze_market(self, instrument, from_time, granularity, price):
+    def analyze_market(self, instrument, from_time, granularity, price):
         try:
             candles = self.get_oanda_candles(instrument, from_time, granularity, price)
 
@@ -239,8 +239,6 @@ class OpenAIPlugin(object):
         except Exception as e:
             print(f"Error analyzing market: {e}")
             return {'error': str(e)}
-
-
 
 # Start the Flask application
 if __name__ == "__main__":
