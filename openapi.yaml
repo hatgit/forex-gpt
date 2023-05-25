@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: Forex GPT OpenAI Plugin
+  title: Forex Prices powered by OpenAI
   description: Unleash Forex GPT; Advanced analysis for currency markets. Gain insights, sentiment evaluation, and text completion.
   version: 'v1'
 servers:
@@ -10,12 +10,12 @@ oanda:
   streaming_hostname: stream-fxpractice.oanda.com
   port: 443
   ssl: true
-  token: # OANDA DEMO API KEY (add your OANDA demo api key before this comment string)
-  username:  
+  token: YOUR_OANDA_TOKEN
+  username: YOUR_OANDA_USERNAME
   accounts:
-    -  #should be in format "000-000-00000-000" (add your OANDA v20 account number before this comment string after the dash)
-    - # should be in format "000-000-00000-000" (add your OANDA v20 account number before this comment string after the dash)
-  active_account: #should be in format "000-000-00000-000" (add your OANDA v20 account number before this comment string after the colon)
+    - YOUR_ACCOUNT_ID_1
+    - YOUR_ACCOUNT_ID_2
+  active_account: YOUR_ACTIVE_ACCOUNT_ID
 paths:
   /analyze:
     post:
