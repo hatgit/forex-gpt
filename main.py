@@ -171,12 +171,7 @@ class OpenAIPlugin(object):
         openai.api_key = self.openai_api_key
 
     def determine_candles_to_analyze(self, time_frame):
-        if time_frame in ['MN', 'W']:
-            return 0.10
-        elif time_frame in ['1d', 'H4', 'H1']:
-            return 0.20
-        else:
-            return 0.33
+        return 1.0
 
     def get_oanda_candles(self, instrument, from_time, granularity, price):
         oanda_api_key = os.environ["OANDA_API_KEY"]  # Retrieve the OANDA API key from the environment variable
