@@ -3,3 +3,4 @@ openai
 flask
 flask-cors
 numpy
+pyyaml
