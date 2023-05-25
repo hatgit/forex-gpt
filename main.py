@@ -104,12 +104,63 @@ def serve_ai_plugin_manifest():
 @app.route('/prices', methods=['GET', 'POST'])
 # Prices endpoint fetches forex price data from OANDA API
 def get_prices():
-    # Handle both GET and POST requests
     if request.method == 'POST':
         data = request.get_json()
     else:  # It's a GET request
         data = request.args.to_dict()
-    # ... Remaining code for this function ...
+
+    if not data or not all(key in data for key in ['instrument', 'from_time', 'granularity', 'price']):
+        prompt = "Please provide the following details for the price data:\n"
+        prompt += "1. Instrument (currency pair): For example, 'EUR_USD'\n"
+        prompt += "2. From time (start time for the analysis): For example, '2022-1-17T15:00:00.000000000Z'\n"
+        prompt += "3. Granularity (time interval for the analysis): For example, 'H1' (hourly), 'D' (daily), 'M' (monthly), etc."
+        prompt += "4. Price: 'A' for Ask, 'B' for Bid, 'M' for Midpoint"
+        return jsonify({'message': prompt}), 400
+
+    instrument = data.get('instrument')
+    from_time = data.get('from_time')
+    granularity = data.get('granularity')
+    price = data.get('price')
+
+    oanda_api_key = os.getenv("OANDA_API_KEY")
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+
+    plugin = OpenAIPlugin(oanda_api_key, openai_api_key)
+
+    candles = plugin.get_oanda_candles(instrument, from_time, granularity, price)
+
+    if not candles:
+        return jsonify({'message': "Failed to fetch candles."}), 500
+
+    return jsonify({'candles': candles})
+
+
+from datetime import datetime, timedelta
+
+@app.route('/api/analyze', methods=['POST'])
+def analyze():
+    data = request.get_json()
+
+    instrument = data.get('instrument', 'EUR_USD')
+    granularity = data.get('granularity', 'H1')
+    price = data.get('price', 'M')
+
+    # If 'from_time' is not provided in the request, calculate it as 2 days before the current time
+    if 'from_time' not in data:
+        from_time = (datetime.utcnow() - timedelta(days=2)).isoformat() + 'Z'
+    else:
+        from_time = data.get('from_time')
+
+    oanda_api_key = os.getenv("OANDA_API_KEY")
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+
+    plugin = OpenAIPlugin(oanda_api_key, openai_api_key)
+
+    sentiment = plugin.analyze_market(instrument, from_time, granularity, price)
+
+    print(f"Market sentiment: {sentiment}")
+
+    return jsonify({'sentiment': sentiment})
 
 # Class for interfacing with OpenAI API and OANDA API
 class OpenAIPlugin(object):
