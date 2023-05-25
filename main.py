@@ -68,7 +68,7 @@ def search():
     response = openai.Completion.create(
         engine="gpt-4-32k-0314", #default is gpt-3.5-turbo-0301 
         prompt=query,
-        max_tokens=4096
+        max_tokens=32000
     )
     generated_text = response.choices[0].text.strip()
     return jsonify({'results': generated_text})
@@ -81,7 +81,7 @@ def playground():
     response = openai.Completion.create(
         engine="gpt-4-32k-0314", #default is gpt-3.5-turbo-0301 
         prompt=code,
-        max_tokens=4096
+        max_tokens=32000
     )
     generated_text = response.choices[0].text.strip()
     return jsonify({'output': generated_text})
@@ -114,13 +114,87 @@ def get_prices():
 # Class for interfacing with OpenAI API and OANDA API
 class OpenAIPlugin(object):
     def __init__(self, oanda_api_key, openai_api_key):
-        # Initialize with API keys and setup API clients
         self.oanda_api_key = oanda_api_key
         self.openai_api_key = openai_api_key
         self.oanda_client = API(access_token=self.oanda_api_key, environment="practice")
         openai.api_key = self.openai_api_key
 
-    # ... Remaining methods for this class ...
+    def determine_candles_to_analyze(self, time_frame):
+        if time_frame in ['MN', 'W']:
+            return 0.10
+        elif time_frame in ['1d', 'H4', 'H1']:
+            return 0.20
+        else:
+            return 0.33
+
+    def get_oanda_candles(self, instrument, from_time, granularity, price):
+        oanda_api_key = os.environ["OANDA_API_KEY"]  # Retrieve the OANDA API key from the environment variable
+
+        oanda_client = API(access_token=oanda_api_key, environment="practice")
+
+        params = {
+            "price": price,
+            "from": from_time,
+            "granularity": granularity
+        }
+
+        try:
+            request = InstrumentsCandles(instrument=instrument, params=params)
+            response = oanda_client.request(request)
+            if "candles" in response:
+                candles = response["candles"]
+                return candles
+            else:
+                print(f"Error fetching candles from Oanda: {response}")
+                return None
+        except V20Error as e:
+            print(f"Error fetching candles from Oanda: {e}")
+            return None
+        except Exception as e:
+            print(f"Unexpected error fetching candles from Oanda: {e}")
+            return None
+        
+     def analyze_market(self, instrument, from_time, granularity, price):
+        try:
+            candles = self.get_oanda_candles(instrument, from_time, granularity, price)
+
+            if not candles:
+                return "Failed to fetch candles."
+
+            candles_percentage = self.determine_candles_to_analyze(granularity)
+            num_candles = int(len(candles) * candles_percentage)
+            last_candles = candles[-num_candles:]
+
+            closing_prices = np.array([float(candle['mid']['c']) for candle in last_candles])
+
+            sma_periods = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 25, 30, 40, 50, 100, 200]
+            smas = {}
+            for period in sma_periods:
+                sma = np.mean(closing_prices[-period:])
+                smas[period] = sma
+
+            trailing_sma_average = np.mean(list(smas.values()))
+
+            sentiment = 'Uncertain'  # Default sentiment
+
+            if closing_prices[-1] > trailing_sma_average:
+                if closing_prices[-1] - trailing_sma_average > 0.1 * trailing_sma_average:
+                    sentiment = 'Very bullish'
+                else:
+                    sentiment = 'Bullish'
+            elif closing_prices[-1] < trailing_sma_average:
+                if trailing_sma_average - closing_prices[-1] > 0.1 * trailing_sma_average:
+                    sentiment = 'Very bearish'
+                else:
+                    sentiment = 'Bearish'
+
+            # Return sentiment and SMAs
+            return {'sentiment': sentiment, 'smas': smas}
+        except Exception as e:
+            print(f"Error analyzing market: {e}")
+            return {'error': str(e)}
+
+
 
 # Start the Flask application
 if __name__ == "__main__":
