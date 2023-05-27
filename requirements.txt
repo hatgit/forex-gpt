@@ -4,3 +4,4 @@ flask
 flask-cors
 numpy
 pyyaml
+python-dotenv
