@@ -10,10 +10,10 @@
   },
   "api": {
   "type": "openapi",
-  "url": "forex-gpt-production.up.railway.app/openapi.yaml",
+  "url": "https://forex-gpt-production.up.railway.app/openapi.yaml",
   "is_user_authenticated": false
   },
-  "logo_url": "forex-gpt-production.up.railway.app/logo.png", 
+  "logo_url": "https://forex-gpt-production.up.railway.app/logo.png", 
   "contact_email": "forexgptai@gmail.com",
   "legal_info_url": "https://forex-gpt.ai"
   }
