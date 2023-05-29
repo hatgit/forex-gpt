@@ -12,7 +12,6 @@ from datetime import datetime
 from datetime import timedelta
 from dotenv import load_dotenv
 import yaml
-import pytz
 
 
 # Load environment variables from .env file
