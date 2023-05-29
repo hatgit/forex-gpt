@@ -12,6 +12,9 @@ from datetime import datetime
 from datetime import timedelta
 from dotenv import load_dotenv
 import yaml
+import pytz
+from dateutil.parser import parse
+from tzlocal import get_localzone
 
 # Load environment variables from .env file
 load_dotenv()
@@ -144,6 +147,11 @@ def get_prices():
     from_time = data.get('from_time')
     granularity = data.get('granularity')
     price = data.get('price')
+    
+     # Convert the user's local time to UTC
+    local_tz = get_localzone()  # detech user's local time zone
+    utc_tz = pytz.timezone('UTC')
+    from_time_utc = parse(from_time).astimezone(utc_tz).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
 
     oanda_api_key = os.getenv("OANDA_API_KEY")
     openai_api_key = os.getenv("OPENAI_API_KEY")
