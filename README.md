@@ -69,6 +69,7 @@ Try asking Forex-GPT these prompts:
 * "What is the overall sentiment for the USDCHF currency pair using daily candles for the past sixty days, excluding volume data?"
 * "What is the overall sentiment for the USDJPY currency pair using weekly candles for the past sixty weeks, excluding volume data?"
 * "What is the overall sentiment for the USDCAD currency pair using monthly candles for the past sixty months, excluding volume data?"
+* "What is the overall sentiment for the EURUSD currency pair using bid prices on daily candles for the past sixty days, excluding volume data, and tell me the starting prices on the first day and last candle price on last day for that period?" 
 
 
 Here is some further examples: 
