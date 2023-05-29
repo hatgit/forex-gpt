@@ -13,8 +13,7 @@ from datetime import timedelta
 from dotenv import load_dotenv
 import yaml
 import pytz
-from dateutil.parser import parse
-from tzlocal import get_localzone
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -67,7 +66,7 @@ def generate():
     generated_text = openai.Completion.create(engine="text-davinci-003", 
     prompt=prompt, 
     temperature=temperature,
-    max_tokens=4096,
+    max_tokens=3700, #default max is 4096 (changing to 3700 as errors were occurung where prompt was consuming more tokens in addition to completion causing total to go above max).
     n=2,
     stop=None,
     log_level="info"                                          
@@ -148,8 +147,8 @@ def get_prices():
     granularity = data.get('granularity')
     price = data.get('price')
     
-     # Convert the user's local time to UTC
-    local_tz = get_localzone()  # detech user's local time zone
+    # Convert the user's local time to UTC
+    local_tz = pytz.timezone('America/New_York')  # Change 'America/New_York' to the user's local time zone
     utc_tz = pytz.timezone('UTC')
     from_time_utc = parse(from_time).astimezone(utc_tz).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
 
