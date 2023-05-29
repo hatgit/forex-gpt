@@ -75,7 +75,7 @@ def complete():
     text = data.get('text')
     completed_text = openai.Completion.create(model="text-davinci-003",
     text=text,
-    max_tokens=4096
+    max_tokens=3700 #default max is 4096 (changing to 3700 as errors were occurung where prompt was consuming more tokens in addition to completion causing total to go above max).
     )
     return jsonify({'completed_text': completed_text})
 
