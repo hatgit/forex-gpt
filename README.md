@@ -70,6 +70,11 @@ Try asking Forex-GPT these prompts:
 * "What is the overall sentiment for the USDJPY currency pair using weekly candles for the past sixty weeks, excluding volume data?"
 * "What is the overall sentiment for the USDCAD currency pair using monthly candles for the past sixty months, excluding volume data?"
 * "What is the overall sentiment for the EURUSD currency pair using bid prices on daily candles for the past sixty days, excluding volume data, and tell me the starting prices on the first day and last candle price on last day for that period?" 
+* "Based on ten-minute candles for the past nine hours, what is the sentiment analysis for the EUR/USD currency pair? Please include the starting price, latest price, and describe the current trend leading up to the present."
+* "Could you provide an in-depth sentiment analysis for the GBP/USD currency pair using sixty-minute candles over the past sixty hours? Please share the starting price, latest price, and explain the prevailing trend up to the present."
+* "I'm interested in understanding the overall sentiment of the USD/JPY currency pair over the past sixty months using monthly candles. Kindly include the starting price, latest price, and elaborate on the current trend leading up to the present."
+* "What does the sentiment analysis reveal for the USD/CHF currency pair based on daily candles over the past thirty days? Please provide the starting price, latest price, and offer insights into the prevailing trend up to the present."
+* "Provide a comprehensive sentiment analysis for the AUD/USD currency pair using fifteen-minute candles for the past six hours. Include the starting price, latest price, and discuss the current trend leading up to the present."
 
 
 Here is some further examples: 
