@@ -65,7 +65,7 @@ def generate():
     prompt=prompt, 
     temperature=temperature,
     max_tokens=4096,
-    n=1,
+    n=2,
     stop=None,
     log_level="info"                                          
                                               
@@ -170,7 +170,7 @@ def analyze():
 
     # If 'from_time' is not provided in the request, calculate it as 2 days before the current time
     if 'from_time' not in data:
-        from_time = (datetime.utcnow() - timedelta(days=1)).isoformat() + 'Z'
+        from_time = (datetime.utcnow() - timedelta(days=2)).isoformat() + 'Z'
     else:
         from_time = data.get('from_time')
 
