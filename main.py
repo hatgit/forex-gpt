@@ -146,11 +146,6 @@ def get_prices():
     from_time = data.get('from_time')
     granularity = data.get('granularity')
     price = data.get('price')
-    
-    # Convert the user's local time to UTC
-    local_tz = pytz.timezone('America/New_York')  # Change 'America/New_York' to the user's local time zone
-    utc_tz = pytz.timezone('UTC')
-    from_time_utc = parse(from_time).astimezone(utc_tz).strftime('%Y-%m-%dT%H:%M:%S.%fZ')
 
     oanda_api_key = os.getenv("OANDA_API_KEY")
     openai_api_key = os.getenv("OPENAI_API_KEY")
