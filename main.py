@@ -64,7 +64,11 @@ def generate():
     generated_text = openai.Completion.create(engine="text-davinci-003", 
     prompt=prompt, 
     temperature=temperature,
-    max_tokens=4096
+    max_tokens=4096,
+    n=1,
+    stop=None,
+    log_level="info"                                          
+                                              
     )
     return jsonify({'generated_text': generated_text})
 
