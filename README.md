@@ -13,7 +13,7 @@ You will need the following API keys which can be obtained from their respective
 1) Open AI API key for developers:
 2) OANDA API for for fxTrade demo account: 
 
-rename the file `template.env` to `.env` and set the following variables by repalacing the #comments: 
+revise the values contained in the `.env` file and set the following variables by repalacing the #comments: 
 
 ```HOST=#hosting info (i.e. 0.0.0.0)
 PORT=#port info (i.e. 5003)
@@ -26,35 +26,13 @@ ACCOUNT2=#oanada demo account number 2 (if any)
 ACTIVE_ACCOUNT= #oanada demo account v20 compatible from 1 or 2 
 ```
 
-
-To install the required packages for this plugin, run the following command:
-
-```bash
-pip install -r requirements.txt
-```
-
-To run the plugin, enter the following command:
-
-```bash
-python main.py
-```
-
-This should run the local server from within the terminal window that the above main.py comannd was run. Depending on your Python configuration version you may need to run:
-
-```bash
-python3 main.py
-```
-
-
-Once the local server is running:
-
 1. Navigate to https://chat.openai.com. 
 2. In the Model drop down, select "Plugins" (note, if you don't see it there, you don't have access yet).
 3. Select "Plugin store"
-4. Select "Develop your own plugin"
-5. Enter in `localhost:5003` since this is the URL the server is running on locally, then select "Find manifest file".
+4. Select "Install unverified plugin"
+5. Enter in `https://forex-gpt-production.up.railway.app` since this is the URL the server is running on.
 
-The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles (don't comment on each candle just overall)" or revise your prompt accordingly. 
+The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles using bid prices (don't comment on each candle just overall)" or revise your prompt accordingly. 
 
 **Understanding the maximum message size and token-limit imposted by Chat GPT:**
 
