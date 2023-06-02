@@ -4,7 +4,7 @@ info:
   description: Unleash Forex GPT; Advanced analysis for currency markets. Gain insights, sentiment evaluation, and text completion.
   version: 'v1'
 servers:
-  - url: https://forex-gpt-production.up.railway.app
+  - url: https://live.forex-gpt.ai
 oanda:
   hostname: api-fxpractice.oanda.com
   streaming_hostname: stream-fxpractice.oanda.com
