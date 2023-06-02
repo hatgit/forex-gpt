@@ -30,7 +30,7 @@ ACTIVE_ACCOUNT= #oanada demo account v20 compatible from 1 or 2
 2. In the Model drop down, select "Plugins" (note, if you don't see it there, you don't have access yet).
 3. Select "Plugin store"
 4. Select "Install unverified plugin"
-5. Enter in `https://forex-gpt-production.up.railway.app` since this is the URL the server is running on.
+5. Enter in `https://live.forex-gpt.ai` since this is the URL the server is running on.
 
 The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles using bid prices (don't comment on each candle just overall)" or revise your prompt accordingly. 
 
