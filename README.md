@@ -2,9 +2,9 @@
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/c461f57b-d977-4c95-bc9f-de6abac01501" width="20%" height="auto">
 
 
-# Forex-GPT.ai plugin quickstart
+# Forex-Rates plugin for Chat-GPT from Forex-GPT.ai quickstart
 
-This is a quickstart guide for setting up and running the Forex-GPT OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
+This is a quickstart guide for setting up and running the Forex-Rates OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
 
 ## Setup for Mac users
 
@@ -36,11 +36,11 @@ The plugin should now be installed and enabled! You can start with a question li
 
 **Understanding the maximum message size and token-limit imposted by Chat GPT:**
 
-The following prompts should work, as they scratch the upper threshold of the token limit per message, which is currently 32k tokens, based on the latest engine upgrade to Forex-GPT, switching `gpt-3.5-turbo-0301` to `gpt-4-32k-0314` so that you can query larger historical time-frames. 
+The following prompts should work, as they scratch the upper threshold of the token limit per message, which is currently 32k tokens, based on the latest engine upgrade to Forex-Rates, switching `gpt-3.5-turbo-0301` to `gpt-4-32k-0314` so that you can query larger historical time-frames. 
 
 **Sample prompts from the last hour of minute data to the last 60 months of month candle stick data:**
 
-Try asking Forex-GPT these prompts:
+Try asking Forex-Rates these prompts:
 
 * "What is the overall sentiment for the EURUSD currency pair using ten-minute candles for the past ten hours, excluding volume data?"
 * "What is the overall sentiment for the GBPUSD currency pair using sixty-minute candles for the past sixty hours, excluding volume data?"
@@ -60,23 +60,23 @@ Here is some further examples:
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/f907108f-dc9b-4fa5-9521-b6bb2fbfad96" width="60%" height="auto">
 
  
-Another example of interacting with the Chat-GPT in a way that will trigger the Forex-GPT plugin to elicit a response from the OANDA API, by asking:"what is the bid ask spread on the latest 1 minute candle from oanda" where it will default to using the eur/usd pair (alternativley you can ask for a supported currency in your prompt). 
+Another example of interacting with the Chat-GPT in a way that will trigger the Forex-Rates plugin to elicit a response from the OANDA API, by asking:"what is the bid ask spread on the latest 1 minute candle from oanda" where it will default to using the eur/usd pair (alternativley you can ask for a supported currency in your prompt). 
 
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/7098e22c-b26b-4a3d-8d55-8c7bd16a38d3" width="60%" height="auto">
 
 
-## Here is a short video demonstrating the Forex-GPT plugin responding in real-time to a query: 
+## Here is a short video demonstrating the Forex-Rates plugin responding in real-time to a query: 
 
 https://github.com/hatgit/forex-gpt/assets/5213035/4e029080-9b86-44fc-a3a1-b347045b1844
 
 
 
 
-## Forex-GPT Plugin Flowchart
+## Forex-Rates Plugin Flowchart
 
 ![Forex-GPT-plugin-flow-chart drawio](https://github.com/hatgit/forex-gpt/assets/5213035/85c42c3f-54b4-46f4-b107-c595b9d3e1fc)
 
-## Overview of how Forex-GPT works:
+## Overview of how Forex-Rates plugin works:
 
 1. Imports necessary libraries and modules.
 
@@ -174,27 +174,57 @@ These are the most traded currency pairs in the world, representing the world's 
 - AUD/USD (Australian Dollar / United States Dollar)
 - USD/CAD (United States Dollar / Canadian Dollar)
 - NZD/USD (New Zealand Dollar / United States Dollar)
+- USD/MXN (United States Dollar / Mexican Peso)
+- USD/HUF (United States Dollar / Hungarian Forint)
+- USD/TRY (United States Dollar / Turkish Lira)
+- USD/CNH (United States Dollar / Chinese Yuan)
+- USD/PLN (United States Dollar / Polish Zloty)
+- USD/DKK (United States Dollar / Danish Krone)
+- USD/NOK (United States Dollar / Norwegian Krone)
+- USD/SEK (United States Dollar / Swedish Krona)
+- USD/HKD (United States Dollar / Hong Kong Dollar)
+- USD/SGD (United States Dollar / Singapore Dollar)
+- USD/CZK (United States Dollar / Czech Koruna)
+- USD/ZAR (United States Dollar / South African Rand)
+- USD/THB (United States Dollar / Thai Baht)
 
-## Minor Currency Pairs
+
+## Cross Currency Pairs
 These pairs do not include the US dollar but include the major currencies like the Euro, the UK Pound, and Yen. Examples include:
-
 - EUR/GBP (Euro / British Pound Sterling)
 - EUR/AUD (Euro / Australian Dollar)
 - GBP/JPY (British Pound Sterling / Japanese Yen)
-
-## Exotic Currency Pairs
-These pairs include a major currency, paired with the currency of a developing economy, such as Brazil, Mexico, or South Africa. Examples include:
-
-- USD/SGD (United States Dollar / Singapore Dollar)
-- USD/HKD (United States Dollar / Hong Kong Dollar)
-- USD/TRY (United States Dollar / Turkish Lira)
-
-## Cross Currency Pairs
-These pairs do not include the US dollar. Examples include:
-
+- EUR/JPY (Euro / Japanese Yen)
+- GBP/CHF (British Pound Sterling / Swiss Franc)
+- GBP/CAD (British Pound Sterling / Canadian Dollar)
 - EUR/CHF (Euro / Swiss Franc)
-- GBP/JPY (British Pound Sterling / Japanese Yen)
+- AUD/JPY (Australian Dollar / Japanese Yen)
+- CHF/JPY (Swiss Franc / Japanese Yen)
+- EUR/CAD (Euro / Canadian Dollar)
+- EUR/ZAR (Euro / South African Rand)
+- EUR/NOK (Euro / Norwegian Krone)
+- NZD/JPY (New Zealand Dollar / Japanese Yen)
+- NZD/CAD (New Zealand Dollar / Canadian Dollar)
+- NZD/CHF (New Zealand Dollar / Swiss Franc)
 - AUD/CAD (Australian Dollar / Canadian Dollar)
+- GBP/AUD (British Pound Sterling / Australian Dollar)
+- GBP/NZD (British Pound Sterling / New Zealand Dollar)
+- AUD/SGD (Australian Dollar / Singapore Dollar)
+- AUD/CHF (Australian Dollar / Swiss Franc)
+- AUD/HKD (Australian Dollar / Hong Kong Dollar)
+- NZD/SGD (New Zealand Dollar / Singapore Dollar)
+- NZD/HKD (New Zealand Dollar / Hong Kong Dollar)
+- SGD/JPY (Singapore Dollar / Japanese Yen)
+- HKD/JPY (Hong Kong Dollar / Japanese Yen)
+- CHF/HKD (Swiss Franc / Hong Kong Dollar)
+- TRY/JPY (Turkish Lira / Japanese Yen)
+- CHF/ZAR (Swiss Franc / South African Rand)
+- GBP/ZAR (British Pound Sterling / South African Rand)
+- EUR/HKD (Euro / Hong Kong Dollar)
+- GBP/HKD (British Pound Sterling / Hong Kong Dollar)
+- EUR/CZK (Euro / Czech Koruna)
+- CAD/JPY (Canadian Dollar / Japanese Yen)
+
 
 ## Cryptocurrency Pairs
 OANDA also supports some cryptocurrency pairs like:
@@ -207,11 +237,11 @@ Please note that the availability of currency pairs may depend on the region and
 
 ## Disclaimer
 
-**Risk Warning: Trading in currency markets involves substantial risk of loss and is not suitable for everyone.** The Forex GPT plugin provided in this repository is intended for informational purposes only and should not be considered as financial or investment advice. Before making any trading decisions, it is important to conduct thorough research, seek professional guidance, and fully understand the risks involved.
+**Risk Warning: Trading in currency markets involves substantial risk of loss and is not suitable for everyone.** The Forex Rates plugin provided in this repository is intended for informational purposes only and should not be considered as financial or investment advice. Before making any trading decisions, it is important to conduct thorough research, seek professional guidance, and fully understand the risks involved.
 
-**No Warranty:** The Forex GPT plugin is provided "as is" without any warranties or guarantees. The authors and contributors of this repository do not make any representations or warranties, express or implied, regarding the accuracy, reliability, or completeness of the plugin or its suitability for any particular purpose.
+**No Warranty:** The Forex Rates plugin is provided "as is" without any warranties or guarantees. The authors and contributors of this repository do not make any representations or warranties, express or implied, regarding the accuracy, reliability, or completeness of the plugin or its suitability for any particular purpose.
 
 **MIT License:** The Forex GPT plugin is released under the [MIT License](https://github.com/hatgit/forex-gpt/blob/main/LICENSE). Please refer to the [LICENSE](https://github.com/hatgit/forex-gpt/blob/main/LICENSE) file for more details.
 
-By using the Forex GPT plugin, you acknowledge and agree to the above disclaimer and understand the associated risks of currency market trading, and the limitations of large language models (LLMs) such as Chat-GPT which may produce inaccurate information about people, places, or facts. The authors and contributors of this repository shall not be held responsible for any losses or damages incurred as a result of using the plugin.
+By using the Forex-Rates plugin, you acknowledge and agree to the above disclaimer and understand the associated risks of currency market trading, and the limitations of large language models (LLMs) such as Chat-GPT which may produce inaccurate information about people, places, or facts. The authors and contributors of this repository shall not be held responsible for any losses or damages incurred as a result of using the plugin.
 
