@@ -1,8 +1,14 @@
 
+# Forex-Rates plugin for Chat-GPT from Forex-GPT.ai 
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/c461f57b-d977-4c95-bc9f-de6abac01501" width="20%" height="auto">
 
+# Install directly from within Chat-GPT:
+Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10th, 2023. Please note that the Plugin only works fully during the trading week from 5pm EST on Sunday through 4pm EST on Friday, as forex markets are closed on the weekends. 
 
-# Forex-Rates plugin for Chat-GPT from Forex-GPT.ai quickstart
+<img src="https://github.com/hatgit/forex-gpt/assets/5213035/517f6fa8-d0c1-45b0-9658-733d04dc014a" width="35%" height="auto">
+
+
+# Quickstart guide
 
 This is a quickstart guide for setting up and running the Forex-Rates OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
 
