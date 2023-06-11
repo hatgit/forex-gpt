@@ -18,18 +18,23 @@ import yaml
 load_dotenv()
 
 # Load YAML file (removing in production)
-with open('openapi.yaml', 'r') as yaml_file:
-   yaml_data = yaml.safe_load(yaml_file)
+#with open('openapi.yaml', 'r') as yaml_file:
+  # yaml_data = yaml.safe_load(yaml_file)
+   
+token = os.getenv('OANDA_TOKEN')
+accounts = [os.getenv('ACCOUNT1'), os.getenv('ACCOUNT2')]
+active_account = os.getenv('ACTIVE_ACCOUNT')
+username = os.getenv('OANDA_USERNAME')
 
-# Set values from environment variables
-yaml_data['oanda']['token'] = os.getenv('OANDA_TOKEN')
-yaml_data['oanda']['accounts'] = [os.getenv('ACCOUNT1'), os.getenv('ACCOUNT2')]
-yaml_data['oanda']['active_account'] = os.getenv('ACTIVE_ACCOUNT')
-yaml_data['oanda']['username'] = os.getenv('OANDA_USERNAME')
+# Set values from environment variables (removing in production)
+#yaml_data['oanda']['token'] = os.getenv('OANDA_TOKEN')
+#yaml_data['oanda']['accounts'] = [os.getenv('ACCOUNT1'), os.getenv('ACCOUNT2')]
+#yaml_data['oanda']['active_account'] = os.getenv('ACTIVE_ACCOUNT')
+#yaml_data['oanda']['username'] = os.getenv('OANDA_USERNAME')
 
 # Save modified YAML file (removing in production)
-with open('openapi.yaml', 'w') as yaml_file:
-  yaml.dump(yaml_data, yaml_file)
+#with open('openapi.yaml', 'w') as yaml_file:
+ # yaml.dump(yaml_data, yaml_file)
 
 # Setup Flask app
 app = Flask(__name__)
