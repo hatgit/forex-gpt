@@ -3,7 +3,7 @@
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/c461f57b-d977-4c95-bc9f-de6abac01501" width="20%" height="auto">
 
 # Install directly from within Chat-GPT:
-Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10th, 2023. Please note that the Plugin only works fully during the trading week from 5pm EST on Sunday through 4pm EST on Friday, as forex markets are closed on the weekends. 
+Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10th, 2023. Please note that the Plugin works 7-days a week but the trading week is from 5pm EST on Sunday through 5pm EST on Friday, so any requests made on the weekend cannot be in the present tense as markets are closed on the weekends. 
 
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/517f6fa8-d0c1-45b0-9658-733d04dc014a" width="35%" height="auto">
 
@@ -48,11 +48,11 @@ The following prompts should work, as they scratch the upper threshold of the to
 
 Try asking Forex-Rates these prompts:
 
-* "What is the overall sentiment for the EURUSD currency pair using ten-minute candles for the past ten hours, excluding volume data?"
-* "What is the overall sentiment for the GBPUSD currency pair using sixty-minute candles for the past sixty hours, excluding volume data?"
-* "What is the overall sentiment for the USDCHF currency pair using daily candles for the past sixty days, excluding volume data?"
-* "What is the overall sentiment for the USDJPY currency pair using weekly candles for the past sixty weeks, excluding volume data?"
-* "What is the overall sentiment for the USDCAD currency pair using monthly candles for the past sixty months, excluding volume data?"
+* "What is the overall sentiment for the EURUSD currency pair using bid prices on ten-minute candles for the past ten hours, excluding volume data?"
+* "What is the overall sentiment for the GBPUSD currency pair using bid prices on sixty-minute candles for the past sixty hours, excluding volume data?"
+* "What is the overall sentiment for the USDCHF currency pair using bid prices on daily candles for the past sixty days, excluding volume data?"
+* "What is the overall sentiment for the USDJPY currency pair using bid prices on weekly candles for the past sixty weeks, excluding volume data?"
+* "What is the overall sentiment for the USDCAD currency pair using bid prices on monthly candles for the past sixty months, excluding volume data?"
 * "What is the overall sentiment for the EURUSD currency pair using bid prices on daily candles for the past sixty days, excluding volume data, and tell me the starting prices on the first day and last candle price on last day for that period?" 
 * "Based on ten-minute candles for the past nine hours using ask prices, what is the sentiment analysis for the EUR/USD currency pair? Please include the starting price, latest price, and describe the current trend leading up to the present."
 * "Could you provide an in-depth sentiment analysis for the GBP/USD currency pair using the bid prices of sixty-minute candles over the past sixty hours? Please share the starting price, latest price, and explain the prevailing trend up to the present."
