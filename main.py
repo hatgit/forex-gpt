@@ -67,10 +67,10 @@ def generate():
     data = request.get_json()
     prompt = data.get('prompt')
     temperature = data.get('temperature', 0.5)
-    generated_text = openai.Completion.create(engine="gpt-4-32k-0613", 
+    generated_text = openai.Completion.create(engine="text-davinci-003", 
     prompt=prompt, 
     temperature=temperature,
-    max_tokens=30000, #default max is 4096 for text-davinci-003(changing to 3700 as errors were occurung where prompt was consuming more tokens in addition to completion causing total to go above max).
+    max_tokens=3700, #default max is 4096 for text-davinci-003, errors with sentiment analysis were caused by gpt-4-32k-0613 here(changing to 3700 as errors were occurung where prompt was consuming more tokens in addition to completion causing total to go above max).
     n=2,
     stop=None,
     log_level="info"                                          
@@ -83,9 +83,9 @@ def generate():
 def complete():
     data = request.get_json()
     text = data.get('text')
-    completed_text = openai.Completion.create(model="gpt-4-32k-0613",
+    completed_text = openai.Completion.create(model="text-davinci-003",
     text=text,
-    max_tokens=30000 #default max is 4096 for text-davinci-003 (changing to 3700 as errors were occurung where prompt was consuming more tokens in addition to completion causing total to go above max).
+    max_tokens=3700 #default max is 4096 for text-davinci-003, errors with sentiment analysis were caused by gpt-4-32k-0613 here (changing to 3700 as errors were occurung where prompt was consuming more tokens in addition to completion causing total to go above max).
     )
     return jsonify({'completed_text': completed_text})
 
