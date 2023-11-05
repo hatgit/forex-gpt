@@ -240,6 +240,12 @@ OANDA also supports some cryptocurrency pairs like:
 
 Please note that the availability of currency pairs may depend on the region and the specific regulations applicable to forex trading in that region. It's always a good idea to check the OANDA API documentation or contact OANDA support for the most accurate and up-to-date information.
 
+## Currency Conversion
+The Forex-Rates plugin for Chat-GPT 4 can also make currency conversion calculations, such as by asking it to convert an arbitrary amount of one currency into another using the latest rates. For instance, asking "What is $163,765 in euros?" will return a result like seen in the screenshot below: 
+
+<img width="568" alt="Screen Shot 2023-11-05 at 5 31 51 PM" src="https://github.com/hatgit/forex-gpt/assets/5213035/f18302e6-8baa-4b2c-a32a-3e31ea37a8b3">
+
+
 
 ## Disclaimer
 
