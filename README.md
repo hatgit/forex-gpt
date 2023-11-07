@@ -10,7 +10,7 @@ Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10t
 
 # Quickstart guide
 
-This is a quickstart guide for setting up and running the Forex-Rates OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
+This is a quick start guide for setting up and running the Forex-Rates OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
 
 ## Setup for Mac users
 
