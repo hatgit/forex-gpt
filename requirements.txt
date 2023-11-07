@@ -2,6 +2,7 @@ oandapyV20
 openai
 flask
 requests
+six
 flask-cors
 numpy
 pyyaml
