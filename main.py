@@ -67,7 +67,7 @@ def generate():
     data = request.get_json()
     prompt = data.get('prompt')
     temperature = data.get('temperature', 0.5)
-    generated_text = openai.ChatCompletion.create(engine="gpt-4-32k-0613", 
+    generated_text = openai.ChatCompletion.create(engine="gpt-4-1106-preview", 
     prompt=prompt, 
     temperature=temperature,
     max_tokens=28000, #default max is 4096 for text-davinci-003, errors with sentiment analysis were caused by gpt-4-32k-0613 here when Chat was missing from ChatCompletion (changing to 3700 as errors were occurring where the prompt was consuming more tokens in addition to completion causing total to go above max).
@@ -83,7 +83,7 @@ def generate():
 def complete():
     data = request.get_json()
     text = data.get('text')
-    completed_text = openai.ChatCompletion.create(model="gpt-4-32k-0613",
+    completed_text = openai.ChatCompletion.create(model="gpt-4-1106-preview",
     text=text,
     max_tokens=28000 #default max is 4096 for text-davinci-003, errors with sentiment analysis were caused by gpt-4-32k-0613 here when Chat was missing from ChatCompletion (changing to 3700 as errors were occurring where the prompt was consuming more tokens in addition to completion causing total to go above max).
     )
@@ -95,9 +95,9 @@ def search():
     data = request.get_json()
     query = data.get('query')
     response = openai.Completion.create(
-        engine="gpt-4-32k-0613", # upgraded from gpt-4-32k-0314, default is gpt-3.5-turbo-0301 
+        engine="gpt-4-1106-preview", # upgraded from gpt-4-32k-0314 which supports 128k tokens, default is gpt-3.5-turbo-0301 
         prompt=query,
-        max_tokens=32000
+        max_tokens=120000
     )
     generated_text = response.choices[0].text.strip()
     return jsonify({'results': generated_text})
@@ -108,9 +108,9 @@ def playground():
     data = request.get_json()
     code = data.get('code')
     response = openai.Completion.create(
-        engine="gpt-4-32k-0613", # upgraded from gpt-4-32k-0314, default is gpt-3.5-turbo-0301 
+        engine="gpt-4-1106-preview", # upgraded to gpt-4-1106-preview from gpt-4-32k-0314, default is gpt-3.5-turbo-0301 
         prompt=code,
-        max_tokens=32000
+        max_tokens=120000
     )
     generated_text = response.choices[0].text.strip()
     return jsonify({'output': generated_text})
