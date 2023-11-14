@@ -1,5 +1,5 @@
 oandapyV20
-openai
+openai>=1.0.0,<2.0.0
 flask
 requests
 six
