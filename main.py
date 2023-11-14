@@ -1,6 +1,6 @@
 # Import necessary modules and libraries
 import os
-import openai
+from openai import OpenAI
 from oandapyV20 import API
 from oandapyV20.exceptions import V20Error
 from oandapyV20.endpoints.instruments import InstrumentsCandles
