@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
-  title: Forex Prices powered by OpenAI
-  description: Unleash Forex GPT; Advanced analysis for currency markets. Gain insights, sentiment evaluation, and text completion.
+  title: Forex Rates powered by OpenAI
+  description: Unleash Forex Rates; Advanced analysis for currency markets. Gain insights, sentiment evaluation, and text completion.
   version: 'v1'
 servers:
   - url: https://live.forex-gpt.ai
@@ -119,16 +119,16 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/pricesResponse'
-
 components:
   schemas:
     analyzeRequest:
       type: object
+      required: 
+        - text
       properties:
         text:
           type: string
           description: The text to analyze.
-          required: true
         entities:
           type: array
           items:
@@ -146,15 +146,31 @@ components:
               text:
                 type: string
                 description: The text of the entity.
+    analyzeResponse:
+      type: object
+      properties:
+        sentiment:
+          type: string
+          description: The overall market sentiment based on the analysis.
+        smas:
+          type: object
+          additionalProperties:
+            type: number
+          description: A dictionary of Simple Moving Averages (SMAs) for various periods.
+        error:
+          type: string
+          description: Error message in case the analysis fails.
     generateRequest:
       type: object
+      required: 
+        - prompt
       properties:
         prompt:
           type: string
           description: The prompt for the generator.
-          required: true
         temperature:
-          type: float
+          type: number
+          format: float
           description: The temperature of the generator.
           default: 0.5
     generateResponse:
@@ -165,11 +181,12 @@ components:
           description: The generated text.
     completeRequest:
       type: object
+      required: 
+        - text
       properties:
         text:
           type: string
           description: The text to complete.
-          required: true
     completeResponse:
       type: object
       properties:
@@ -178,11 +195,12 @@ components:
           description: The completed text.
     searchRequest:
       type: object
+      required: 
+        - query
       properties:
         query:
           type: string
           description: The search query.
-          required: true
     searchResponse:
       type: object
       properties:
@@ -199,11 +217,12 @@ components:
                 description: The URL of the search result.
     playgroundRequest:
       type: object
+      required: 
+        - code
       properties:
         code:
           type: string
           description: The code to execute in the OpenAI playground.
-          required: true
     playgroundResponse:
       type: object
       properties:
@@ -212,23 +231,24 @@ components:
           description: The output of the code execution in the OpenAI playground.
     pricesRequest:
       type: object
+      required: 
+        - instrument
+        - from_time
+        - granularity
+        - price
       properties:
         instrument:
           type: string
           description: The instrument to get historical prices for.
-          required: true
         from_time:
           type: string
           description: The start time for retrieving historical prices.
-          required: true
         granularity:
           type: string
           description: The granularity of the historical prices.
-          required: true
         price:
           type: string
           description: The price type to retrieve (e.g., BA, BC, BO).
-          required: true
     pricesResponse:
       type: object
       properties:
@@ -270,6 +290,3 @@ components:
                   c:
                     type: string
                     description: The close ask price.
-
-                   
-
