@@ -18,7 +18,7 @@ import yaml
 load_dotenv()
 
 # Initialize the OpenAI client with the API key
-openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Load YAML file (removing in production)
 #with open('openapi.yaml', 'r') as yaml_file:
@@ -70,7 +70,7 @@ def generate():
     data = request.get_json()
     prompt = data.get('prompt')
     temperature = data.get('temperature', 0.5)
-    generated_text = openai_client.ChatCompletion.create(engine="gpt-4-1106-preview", 
+    generated_text = client.ChatCompletion.create(engine="gpt-4-1106-preview", 
     prompt=prompt, 
     temperature=temperature,
     max_tokens=28000, #default max is 4096 for text-davinci-003, errors with sentiment analysis were caused by gpt-4-32k-0613 here when Chat was missing from ChatCompletion (changing to 3700 as errors were occurring where the prompt was consuming more tokens in addition to completion causing total to go above max).
@@ -86,7 +86,7 @@ def generate():
 def complete():
     data = request.get_json()
     text = data.get('text')
-    completed_text = openai_client.ChatCompletion.create(model="gpt-4-1106-preview",
+    completed_text = client.ChatCompletion.create(model="gpt-4-1106-preview",
     text=text,
     max_tokens=28000 #default max is 4096 for text-davinci-003, errors with sentiment analysis were caused by gpt-4-32k-0613 here when Chat was missing from ChatCompletion (changing to 3700 as errors were occurring where the prompt was consuming more tokens in addition to completion causing total to go above max).
     )
@@ -97,7 +97,7 @@ def complete():
 def search():
     data = request.get_json()
     query = data.get('query')
-    response = openai_client.Completion.create(
+    response = client.Completion.create(
         engine="gpt-4-1106-preview", # upgraded from gpt-4-32k-0314 which supports 128k tokens, default is gpt-3.5-turbo-0301 
         prompt=query,
         max_tokens=120000
@@ -110,7 +110,7 @@ def search():
 def playground():
     data = request.get_json()
     code = data.get('code')
-    response = openai_client.Completion.create(
+    response = client.Completion.create(
         engine="gpt-4-1106-preview", # upgraded to gpt-4-1106-preview from gpt-4-32k-0314, default is gpt-3.5-turbo-0301 
         prompt=code,
         max_tokens=120000
