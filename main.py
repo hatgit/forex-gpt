@@ -200,7 +200,7 @@ class OpenAIPlugin(object):
         self.oanda_api_key = oanda_api_key
         self.openai_api_key = openai_api_key
         self.oanda_client = API(access_token=self.oanda_api_key, environment="practice")
-        openai.api_key = self.openai_api_key
+        client.api_key = self.openai_api_key
 
     def determine_candles_to_analyze(self, time_frame):
         return 1.0
