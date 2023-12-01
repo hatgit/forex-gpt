@@ -153,6 +153,9 @@ https://github.com/hatgit/forex-gpt/assets/5213035/4e029080-9b86-44fc-a3a1-b3470
 
 ## Getting help
 
+**Server status**
+- Railway.app status https://https://status.railway.app/
+
 **Open AI API resources:**
 
 If you run into issues or have questions building a plugin, please join our [Developer community forum](https://community.openai.com/c/chat-plugins/20).
