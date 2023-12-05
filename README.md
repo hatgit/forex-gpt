@@ -1,6 +1,41 @@
 
-# Forex-Rates plugin for Chat-GPT from Forex-GPT.ai 
+# Forex-Rates plugin for Chat-GPT from [Forex-GPT.ai](https://forex-gpt.ai) 
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/c461f57b-d977-4c95-bc9f-de6abac01501" width="20%" height="auto">
+
+**Forex Rates software suite:** Consisting of the Forex Rates plugin for Chat-GPT, also known as ForexGPT, as well as a free custom GPT, and premium version, the Forex Rates software suite provides AI-powered advanced analysis for currency markets using Chat-GPT by OpenAI (Please read our [terms and conditions](https://forex-gpt.ai/terms-conditions/) for more).
+
+Forex Rates features include:
+
+- **Real-time rates**: Retrieve historical and current forex market prices (free version)
+- **Conversion:** Calculate currency conversion with the latest exchange rates (free version)
+- **Market analysis:** Receive AI-powered technical analysis (free version)
+- **Chart creation**: Create forex charts on the fly with natural language (Available in premium version)
+- **Trading strategy**: Receive risk-management perspectives (Available in premium version)
+- **Chart analysis**: Upload your own charts for Forex Rates to analyze (Available in premium version)
+
+# Forex-Rates reviews in the media:
+
+A curated list of profiles and reviews of Forex-Rates across various platforms as of late 2023:
+
+- [Whatplugin.ai](https://whatplugin.ai) - Forex-Rates is ranked #2 in finance as of 11/25/23.
+- [GPTpluginz.com](https://gptpluginz.com) - Forex-Rates is ranked #7 in finance as of 10/07/23.
+- [AIGrowthPad.com](https://aigrowthpad.com) - Forex-Rates profile.
+- [Plugin.surf](https://plugin.surf) - Forex-Rates profile.
+- [Findplugin.ai](https://findplugin.ai) - Forex-Rates review.
+- [GPTStore.ai](https://gptstore.ai) - Forex-Rates profile.
+- [StartupHub.ai](https://startuphub.ai) - Forex-Rates profile.
+- [GPTCombo.com](https://gptcombo.com) - Forex-Rates profile.
+- [FinancialAccountant.co.uk](https://financialaccountant.co.uk) - Official magazine of the Institute of Financial Accountants.
+
+
+
+# **Example capabilities:**
+
+<p align="center">
+  <img src="https://github.com/hatgit/forex-gpt/assets/5213035/6ae97526-7e6d-4eec-8287-6e99ddeb1067" alt="Forex-GPT-premium-forex-chart-creation-and-analysis" width="45%">
+  <img src="https://github.com/hatgit/forex-gpt/assets/5213035/08db94b7-a4de-454d-9f88-51a52e96419b" alt="Forex-Rates-Premium-version-example-EURUSD-default-prompt" width="45%">
+</p>
+
 
 # Install directly from within Chat-GPT:
 Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10th, 2023. Please note that the Plugin works 7-days a week but the trading week is from 5pm EST on Sunday through 5pm EST on Friday, so any requests made on the weekend cannot be in the present tense as markets are closed on the weekends. 
@@ -9,40 +44,9 @@ Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10t
 
 
 # Quickstart guide
+In addition to the free plugin on the ChatGPT Plugin store, Forex-Rates is also available as a free custom GPT, alongside a premium version (the paid version is $2 per month, or a one-time flat fee of $10, to help support the development of this project). 
 
-This is a quick start guide for setting up and running the Forex-Rates OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
-
-## Setup for Mac users
-
-You will need the following API keys which can be obtained from their respective providers:
-
-1) Open AI API key for developers:
-2) OANDA API for for fxTrade demo account: 
-
-revise the values contained in the `.env` file and set the following variables by repalacing the #comments: 
-
-```HOST=#hosting info (i.e. 0.0.0.0)
-PORT=#port info (i.e. 5003)
-OANDA_API_KEY=#oanda api key for practice acocounts
-OPENAI_API_KEY=#openai api key
-OANDA_TOKEN= #repeat same OANDA Api key for yaml file
-YOUR_OANDA_USERNAME= #registered email 
-ACCOUNT1=#oanada demo account number 1
-ACCOUNT2=#oanada demo account number 2 (if any)
-ACTIVE_ACCOUNT= #oanada demo account v20 compatible from 1 or 2 
-```
-
-1. Navigate to https://chat.openai.com. 
-2. In the Model drop down, select "Plugins" (note, if you don't see it there, you don't have access yet).
-3. Select "Plugin store"
-4. Select "Install unverified plugin"
-5. Enter in `https://live.forex-gpt.ai` since this is the URL the server is running on.
-
-The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles using bid prices (don't comment on each candle just overall)" or revise your prompt accordingly. 
-
-**Understanding the maximum message size and token-limit imposted by Chat GPT:**
-
-The following prompts should work, as they scratch the upper threshold of the token limit per message, which is currently 32k tokens, based on the latest engine upgrade to Forex-Rates, switching `gpt-3.5-turbo-0301` to `gpt-4-32k-0314` so that you can query larger historical time-frames. 
+[![Usage-options-free-version-payments-and-plans](https://github.com/hatgit/forex-gpt/assets/5213035/c664e1dd-4ce5-4db4-9d74-30da3d39d35d)](https://forex-gpt.ai/plans/)
 
 **Sample prompts from the last hour of minute data to the last 60 months of month candle stick data:**
 
@@ -60,15 +64,19 @@ Try asking Forex-Rates these prompts:
 * "What does the sentiment analysis reveal for the USD/CHF currency pair ask prices based on daily candles over the past thirty days? Please provide the starting price, latest price, and offer insights into the prevailing trend up to the present."
 * "Provide a comprehensive sentiment analysis for the AUD/USD currency pair using fifteen-minute candles for the past six hours of bid prices. Include the starting price, latest price, and discuss the current trend leading up to the present."
 
+## Forex Rates on ChatGPT Mobile app 
 
-Here is some further examples: 
-
-<img src="https://github.com/hatgit/forex-gpt/assets/5213035/f907108f-dc9b-4fa5-9521-b6bb2fbfad96" width="60%" height="auto">
+** Here are some further examples of Forex-Rates Premium Version (custom GPT) on mobile. Prompts can be as simple as saying into your microphone or typing: “Eurusd chart last 2 weeks analysis daily bid prices” and this was the result:**
+<p align="center">
+  <img src="https://github.com/hatgit/forex-gpt/assets/5213035/86654f4a-ec6c-4a32-9714-01628dd1460c" alt="Forex Rates Premium Version example prompt mobile (3)" width="30%">
+  <img src="https://github.com/hatgit/forex-gpt/assets/5213035/d5823361-ad46-4c4b-b255-8e730379133b" alt="Forex Rates Premium Version example prompt mobile (2)" width="30%">
+  <img src="https://github.com/hatgit/forex-gpt/assets/5213035/9df6a0b1-3786-483b-b131-102584d685f4" alt="Forex Rates Premium Version example prompt mobile (1)" width="30%">
+</p>
 
  
-Another example of interacting with the Chat-GPT in a way that will trigger the Forex-Rates plugin to elicit a response from the OANDA API, by asking:"what is the bid ask spread on the latest 1 minute candle from oanda" where it will default to using the eur/usd pair (alternativley you can ask for a supported currency in your prompt). 
+Another example of interacting with the Chat-GPT in a way that will trigger the Forex-Rates plugin to elicit a response from the broker API, by asking:"what is the bid ask spread on the latest 1 minute candle from oanda" where it will default to using the eur/usd pair (alternatively you can ask for a supported currency in your prompt). In the example below, we use a default prompt in the [Forex Rates - Free Version custom-GPT](https://chat.openai.com/g/g-VpntOrQsh-forex-rates).
 
-<img src="https://github.com/hatgit/forex-gpt/assets/5213035/7098e22c-b26b-4a3d-8d55-8c7bd16a38d3" width="60%" height="auto">
+![Forex-Rates-Free-version-example-EURUSD-default-prompt](https://github.com/hatgit/forex-gpt/assets/5213035/c4f5f7e4-67c4-4e13-83ce-708aec80798a)
 
 
 ## Here is a short video demonstrating the Forex-Rates plugin responding in real-time to a query: 
@@ -76,7 +84,41 @@ Another example of interacting with the Chat-GPT in a way that will trigger the 
 https://github.com/hatgit/forex-gpt/assets/5213035/4e029080-9b86-44fc-a3a1-b347045b1844
 
 
+# Advanced options for developers interested in supporting this project
 
+This is a quick start guide for setting up a development server locally and running the Forex-Rates OpenAI plugin, which integrates text analysis capabilities with the OANDA API for analyzing currency market data. If you do not already have plugin developer access, please [join the waitlist](https://openai.com/waitlist/plugins).
+
+## local server setup for Mac users (only if you plan on contributing code to this project)
+
+You will need the following API keys which can be obtained from their respective providers:
+
+1) Open AI API key for developers:
+2) OANDA API for for fxTrade demo account: 
+
+revise the values contained in the `.env` file and set the following variables by replacing the #comments: 
+
+```HOST=#hosting info (i.e. 0.0.0.0)
+PORT=#port info (i.e. 5003)
+OANDA_API_KEY=#oanda api key for practice accounts
+OPENAI_API_KEY=#openai api key
+OANDA_TOKEN= #repeat same OANDA Api key for yaml file
+YOUR_OANDA_USERNAME= #registered email 
+ACCOUNT1=#oanada demo account number 1
+ACCOUNT2=#oanada demo account number 2 (if any)
+ACTIVE_ACCOUNT= #oanada demo account v20 compatible from 1 or 2 
+```
+
+1. Navigate to https://chat.openai.com. 
+2. In the Model drop down, select "Plugins" (note, if you don't see it there, you don't have access yet).
+3. Select "Plugin store"
+4. Select "Install unverified plugin"
+5. Enter in `https://live.forex-gpt.ai` since this is the URL the server is running on.
+
+The plugin should now be installed and enabled! You can start with a question like "What is the eur/usd sentiment now, based on the past month daily candles using bid prices (don't comment on each candle just overall)" or revise your prompt accordingly. 
+
+**Understanding the maximum message size and token-limit imposed by Chat GPT:**
+
+The following prompts should work, as they scratch the upper threshold of the token limit per message, which is currently 32k tokens for custom GPTs (and 128k for the plugin), based on the latest engine upgrade to Forex-Rates, so that you can query larger historical time-frames. 
 
 ## Forex-Rates Plugin Flowchart
 
