@@ -20,6 +20,7 @@ paths:
   /analyze:
     post:
       operationId: analyze
+      x-openai-isConsequential: false
       summary: Analyze text
       requestBody:
         required: true
@@ -37,6 +38,7 @@ paths:
   /generate:
     post:
       operationId: generate
+      x-openai-isConsequential: false
       summary: Generate text
       requestBody:
         required: true
@@ -54,6 +56,7 @@ paths:
   /complete:
     post:
       operationId: complete
+      x-openai-isConsequential: false
       summary: Complete text
       requestBody:
         required: true
@@ -88,6 +91,7 @@ paths:
   /playground:
     post:
       operationId: playground
+      x-openai-isConsequential: false
       summary: Use the OpenAI playground
       requestBody:
         required: true
@@ -105,6 +109,7 @@ paths:
   /prices:
     post:
       operationId: prices
+      x-openai-isConsequential: false
       summary: Get historical prices from the OANDA API
       requestBody:
         required: true
