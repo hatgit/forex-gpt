@@ -32,7 +32,7 @@ A curated list of profiles and reviews of Forex-Rates across various platforms a
 # **Example capabilities:**
 
 <p align="center">
-  <img src="https://github.com/hatgit/forex-gpt/assets/5213035/6ae97526-7e6d-4eec-8287-6e99ddeb1067" alt="Forex-GPT-premium-forex-chart-creation-and-analysis" width="45%">
+  <img src="https://github.com/hatgit/forex-gpt/assets/5213035/f884ac9a-a3fd-4e0a-8446-e5dbb9725f74" alt="Forex-GPT-premium-forex-chart-creation-and-analysis" width="45%">
   <img src="https://github.com/hatgit/forex-gpt/assets/5213035/08db94b7-a4de-454d-9f88-51a52e96419b" alt="Forex-Rates-Premium-version-example-EURUSD-default-prompt" width="45%">
 </p>
 
@@ -75,9 +75,6 @@ Try asking Forex-Rates these prompts:
 
  
 Another example of interacting with the Chat-GPT in a way that will trigger the Forex-Rates plugin to elicit a response from the broker API, by asking:"what is the bid ask spread on the latest 1 minute candle from oanda" where it will default to using the eur/usd pair (alternatively you can ask for a supported currency in your prompt). In the example below, we use a default prompt in the [Forex Rates - Free Version custom-GPT](https://chat.openai.com/g/g-VpntOrQsh-forex-rates).
-
-![Forex-Rates-Free-version-example-EURUSD-default-prompt](https://github.com/hatgit/forex-gpt/assets/5213035/c4f5f7e4-67c4-4e13-83ce-708aec80798a)
-
 
 ## Here is a short video demonstrating the Forex-Rates plugin responding in real-time to a query: 
 
