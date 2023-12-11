@@ -1,8 +1,8 @@
 
-# Forex-Rates plugin for Chat-GPT from [Forex-GPT.ai](https://forex-gpt.ai) 
+# Forex-Rates plugin for Chat-GPT, developed by ForexGPT from [Forex-GPT.ai](https://forex-gpt.ai) 
 <img src="https://github.com/hatgit/forex-gpt/assets/5213035/c461f57b-d977-4c95-bc9f-de6abac01501" width="20%" height="auto">
 
-**Forex Rates software suite:** Consisting of the Forex Rates plugin for Chat-GPT, also known as ForexGPT, as well as a free custom GPT, and premium version, the Forex Rates software suite provides AI-powered advanced analysis for currency markets using Chat-GPT by OpenAI (Please read our [terms and conditions](https://forex-gpt.ai/terms-conditions/) for more).
+**Forex Rates software suite:** Developed by ForexGPT, the Forex Rates plugin for Chat-GPT, also known as ForexGPT, as well as a free custom GPT, and premium version, the Forex Rates software suite provides AI-powered advanced analysis for currency markets using Chat-GPT by OpenAI (Please read our [terms and conditions](https://forex-gpt.ai/terms-conditions/) for more).
 
 Forex Rates features include:
 
