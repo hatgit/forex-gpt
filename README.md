@@ -4,6 +4,10 @@
 
 **Forex Rates software suite:** Developed by ForexGPT, the Forex Rates plugin for Chat-GPT, also known as ForexGPT, as well as a free custom GPT, and premium version, the Forex Rates software suite provides AI-powered advanced analysis for currency markets using Chat-GPT by OpenAI (Please read our [terms and conditions](https://forex-gpt.ai/terms-conditions/) for more).
 
+**Beta version available to premium subscribers (charts seen below are generated in response to prompting Forex Rates beta version 3.06, which requires authentication enable in ChatGPT):**
+
+![Forex-Rates-Premium-Version-3 07-BTC-Weekly-Analysis-Through-123123](https://github.com/hatgit/forex-gpt/assets/5213035/2a5c4b2b-1c45-4210-890f-3702263bf37c)
+
 Forex Rates features include:
 
 - **Real-time rates**: Retrieve historical and current forex market prices (free version)
