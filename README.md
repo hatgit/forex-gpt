@@ -48,7 +48,7 @@ Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10t
 
 
 # Quickstart guide
-In addition to the free plugin on the ChatGPT Plugin store, Forex-Rates is also available as a free custom GPT, alongside a premium version (the paid version is $2 per month, or a one-time flat fee of $10, to help support the development of this project). 
+Forex-Rates is also available as a custom GPT, alongside a premium SaaS web app (the paid version is $10 per month, and addition plans are available to help support the development of this project). 
 
 [![Usage-options-free-version-payments-and-plans](https://github.com/hatgit/forex-gpt/assets/5213035/c664e1dd-4ce5-4db4-9d74-30da3d39d35d)](https://forex-gpt.ai/plans/)
 
