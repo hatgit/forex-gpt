@@ -50,8 +50,6 @@ Forex-Rates is now available to all Chat-GPT premium subscribers, as of June 10t
 # Quickstart guide
 Forex-Rates is also available as a custom GPT, alongside a premium SaaS web app (the paid version is $10 per month, and addition plans are available to help support the development of this project). 
 
-[![Usage-options-free-version-payments-and-plans](https://github.com/hatgit/forex-gpt/assets/5213035/c664e1dd-4ce5-4db4-9d74-30da3d39d35d)](https://forex-gpt.ai/plans/)
-
 **Sample prompts from the last hour of minute data to the last 60 months of month candle stick data:**
 
 Try asking Forex-Rates these prompts:
